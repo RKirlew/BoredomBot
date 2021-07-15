@@ -89,8 +89,8 @@ def follow_followers(api):
             api.update_status(status = (greet))
 
 if __name__=="__main__":
-    auth = tweepy.OAuthHandler('Aw172HN6wwRKVs13qK1om6D3B', 'sa8l0bMeq9Am48d5eE7IsY5a5rtqJWFOtMH71moVohcK9kLYHB')
-    auth.set_access_token('1415553024450129921-JzrMp902nGyrjDfVIFDFAtnAHZAwOX', '5Kh8Xk3mZL2ma19Dh2p0WVGhi9XsTFBwW1fuj7l5KhTra')
+    auth = tweepy.OAuthHandler('', '')
+    auth.set_access_token('', '')
    
   
     api = tweepy.API(auth)
