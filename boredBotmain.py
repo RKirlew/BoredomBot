@@ -7,8 +7,8 @@ def main():
     response=requests.get("https://www.boredapi.com/api/activity")
     joke=requests.get("https://official-joke-api.appspot.com/jokes/programming/random")
    
-    auth = tweepy.OAuthHandler('', '')
-    auth.set_access_token('', '')
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
    
  
     tweet=" Bored? Here's What You Can Do Today:\n"+response.json()['activity']+" \nActivity Type: #"+response.json()['type'] +" #boredombotsuggestions #pythonprogramming #python #fun #quarantinecoding #bored "
@@ -89,8 +89,9 @@ def follow_followers(api):
             api.update_status(status = (greet))
 
 if __name__=="__main__":
-    auth = tweepy.OAuthHandler('', '')
-    auth.set_access_token('', '')
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+   
    
   
     api = tweepy.API(auth)
