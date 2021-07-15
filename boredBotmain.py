@@ -6,14 +6,11 @@ randNum=randrange(40)
 def main():
     response=requests.get("https://www.boredapi.com/api/activity")
     joke=requests.get("https://official-joke-api.appspot.com/jokes/programming/random")
-    photoUrl=requests.get("https://api.unsplash.com/search/photos?page=1&query=relaxation&client_id=X0sVRMLjgtZbkyQ9Qn_wgnXgHzZrzI_clYHze0zD-kU")
-    
-    auth = tweepy.OAuthHandler('Aw172HN6wwRKVs13qK1om6D3B', 'sa8l0bMeq9Am48d5eE7IsY5a5rtqJWFOtMH71moVohcK9kLYHB')
-    auth.set_access_token('1415553024450129921-JzrMp902nGyrjDfVIFDFAtnAHZAwOX', '5Kh8Xk3mZL2ma19Dh2p0WVGhi9XsTFBwW1fuj7l5KhTra')
    
-    thePhotoformat="https://api.unsplash.com/search/photos?page={0}&query={1}&client_id=X0sVRMLjgtZbkyQ9Qn_wgnXgHzZrzI_clYHze0zD-kU".format(randNum,response.json()['type'])
-    print(thePhotoformat)
-    photoUrl=requests.get(thePhotoformat)
+    auth = tweepy.OAuthHandler('', '')
+    auth.set_access_token('', '')
+   
+ 
     tweet=" Bored? Here's What You Can Do Today:\n"+response.json()['activity']+" \nActivity Type: #"+response.json()['type'] +" #boredombotsuggestions #pythonprogramming #python #fun #quarantinecoding #bored "
     api = tweepy.API(auth)
     api.update_status(status = (tweet))
